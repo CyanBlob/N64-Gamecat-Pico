@@ -25,7 +25,8 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    n64_pi
+    n64_pi_console
+    n64_pi_cart
 )
 
 # Create C header file with the name <pio program>.pio.h
@@ -43,5 +44,5 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 # Enable usb output, disable uart output
-pico_enable_stdio_usb(${PROJECT_NAME} 0)
-pico_enable_stdio_uart(${PROJECT_NAME} 1)
+pico_enable_stdio_usb(${PROJECT_NAME} 1)
+pico_enable_stdio_uart(${PROJECT_NAME} 0)

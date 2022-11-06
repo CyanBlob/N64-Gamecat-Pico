@@ -6,6 +6,7 @@
 
 #pragma once
 
-#include "n64_pi.pio.h"
+#include "n64_pi_console.pio.h"
+#include "n64_pi_cart.pio.h"
 
 // TODO: Break out common stuff and put it here

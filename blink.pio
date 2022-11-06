@@ -13,15 +13,12 @@
 
     ;mov isr, pins
     ;mov pins, isr [31]
-    in pins, 2
-    mov pins, isr [31]
-    nop [31]
-    nop [31]
+    in pins, 4
+    in null, 28
+    mov pins, isr
 
     ;in null, 2 [31]
     ;mov pins, isr [31]
-    nop [31]
-    nop [31]
 .wrap
 
 % c-sdk {
@@ -47,7 +44,7 @@ void blink_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
 
     // inputs
     sm_config_set_in_pins(&c, 0);
-    pio_sm_set_consecutive_pindirs(pio, sm, 0, 2, false);
+    pio_sm_set_consecutive_pindirs(pio, sm, 0, 4, false);
     
     // Set the clock divider for the state machine
     sm_config_set_clkdiv(&c, div);
